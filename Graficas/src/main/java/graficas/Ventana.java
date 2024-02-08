@@ -210,8 +210,6 @@ public class Ventana extends JFrame {
         JLabel etiqueta2 = new JLabel();
         String rutaImagen = packageRuta.concat("/images/calculator.png");
         ImageIcon imagen = new ImageIcon(rutaImagen);
-        Image icon = imagen.getImage();
-        this.setIconImage(icon);
         etiqueta2.setBounds(160, 110, 200, 200);
         etiqueta2.setBackground(Color.RED);
         etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
