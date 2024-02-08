@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -34,7 +35,7 @@ public class Ventana extends JFrame {
     JLabel saludo = new JLabel();
     
     final String osRuta = System.getProperty("user.dir");
-    String packageRuta = osRuta.concat("/../../..");
+    String packageRuta = osRuta.concat("/src/main/java");
     
     //Constructor
     public Ventana() {
@@ -56,13 +57,13 @@ public class Ventana extends JFrame {
     
     private void iniciarComponentes() {
         agregarPaneles();
-        //agregarEtiquetas();
+        agregarEtiquetas();
         //agregarBotones();
         //agregarRadioBotones();
         //agregarCajasDeTexto();
         //agregarAreasDeTexto();
         //agregarListasDesplegables();
-        pruebaEjemplo();
+        //pruebaEjemplo();
     }
     
     private void agregarPaneles() {
@@ -209,6 +210,8 @@ public class Ventana extends JFrame {
         JLabel etiqueta2 = new JLabel();
         String rutaImagen = packageRuta.concat("/images/calculator.png");
         ImageIcon imagen = new ImageIcon(rutaImagen);
+        Image icon = imagen.getImage();
+        this.setIconImage(icon);
         etiqueta2.setBounds(160, 110, 200, 200);
         etiqueta2.setBackground(Color.RED);
         etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
